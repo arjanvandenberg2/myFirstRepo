@@ -1,13 +1,7 @@
-stages:
-- stage: A
-
-# stage B runs if A fails
-- stage: B
-  condition: failed()
-
-# stage C runs if B succeeds
-- stage: C
-  dependsOn:
-  - A
-  - B
-  condition: succeeded('B')
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
